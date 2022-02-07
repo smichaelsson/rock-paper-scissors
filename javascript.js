@@ -59,29 +59,91 @@ function playRound(playerSelection, computerSelection) {
   return [playerWin, computerWin, resultMessage];
 }
 
-function game() {
-	let playerScore = 0;
-	let computerScore = 0;
+const rockBtn = document.querySelector('#rock');
+const paperBtn = document.querySelector('#paper');
+const scissorsBtn = document.querySelector('#scissors');
 
-	for (rounds = 1; rounds <=5; rounds++) {
-		const playerSelection = prompt('Choose a hand: "rock", "paper", or "scissors"!');
-		const computerSelection = computerPlay();
-		const results = playRound(playerSelection, computerSelection);
+alert("Ready to play Rock Paper Scissors? Choose a hand!");
 
-		if (results[0] == true) {
-			playerScore += 1;
-		} else if (results[1] == true) {
-			computerScore += 1;
-		}
+let rounds = 0;
+let playerScore = 0;
+let computerScore = 0;
+let playerSelection = '';
+let computerSelection = '';
+let results = [];
 
-		console.log(results[2]);
-	}
+rockBtn.addEventListener('click', () => {
+  playerSelection = 'rock';
+  computerSelection = computerPlay();
+  results = playRound(playerSelection, computerSelection);
 
-	if (playerScore > computerScore) {
-		return 'Congrats! You won!';
-	} else if (playerScore < computerScore) {
-		return 'Oof! The computer won this time. Try again!';
-	} else {
-		return 'Tie game! That was close!';
-	}
-}
+  if (results[0] == true) {
+    playerScore += 1;
+  } else if (results[1] == true) {
+    computerScore += 1;
+  }
+
+  alert(results[2]);
+
+  rounds += 1;
+
+  if (rounds == 5) {
+    if (playerScore > computerScore) {
+      alert('Congrats! You won!');
+    } else if (playerScore < computerScore) {
+      alert('Oof! The computer won this time. Try again!');
+    } else {
+      alert('Tie game! That was close!');
+    }
+  }
+});
+paperBtn.addEventListener('click', () => {
+  playerSelection = 'paper';
+  computerSelection = computerPlay();
+  results = playRound(playerSelection, computerSelection);
+
+  if (results[0] == true) {
+    playerScore += 1;
+  } else if (results[1] == true) {
+    computerScore += 1;
+  }
+
+  alert(results[2]);
+
+  rounds += 1;
+
+  if (rounds == 5) {
+    if (playerScore > computerScore) {
+      alert('Congrats! You won!');
+    } else if (playerScore < computerScore) {
+      alert('Oof! The computer won this time. Try again!');
+    } else {
+      alert('Tie game! That was close!');
+    }
+  }
+});
+scissorsBtn.addEventListener('click', () => {
+  playerSelection = 'scissors';
+  computerSelection = computerPlay();
+  results = playRound(playerSelection, computerSelection);
+
+  if (results[0] == true) {
+    playerScore += 1;
+  } else if (results[1] == true) {
+    computerScore += 1;
+  }
+
+  alert(results[2]);
+
+  rounds += 1;
+
+  if (rounds == 5) {
+    if (playerScore > computerScore) {
+      alert('Congrats! You won!');
+    } else if (playerScore < computerScore) {
+      alert('Oof! The computer won this time. Try again!');
+    } else {
+      alert('Tie game! That was close!');
+    }
+  }
+});
