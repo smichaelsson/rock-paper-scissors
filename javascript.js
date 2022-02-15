@@ -59,6 +59,16 @@ function playRound(playerSelection, computerSelection) {
   return [playerWin, computerWin, resultMessage];
 }
 
+function resetGame() {
+  rounds = 0;
+  playerScore = 0;
+  computerScore = 0;
+  pScore.textContent = `Player Score: ${playerScore}`;
+  cScore.textContent = `Computer Score: ${computerScore}`;
+  round.textContent = `Round: ${rounds}`;
+  message.textContent = "";
+}
+
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
@@ -69,7 +79,7 @@ const round = document.querySelector('.rounds h1');
 
 alert("Ready to play Rock Paper Scissors? Choose a hand!");
 
-let rounds = 0;
+let rounds = 1;
 let playerScore = 0;
 let computerScore = 0;
 let playerSelection = '';
@@ -92,15 +102,18 @@ rockBtn.addEventListener('click', () => {
   message.textContent = results[2];
 
   rounds ++;
-  round.textContent = `Rounds: ${rounds}`;
+  round.textContent = `Round: ${rounds}`;
 
-  if (rounds == 5) {
+  if (rounds == 6) {
     if (playerScore > computerScore) {
       alert('Congrats! You won!');
+      resetGame();
     } else if (playerScore < computerScore) {
       alert('Oof! The computer won this time. Try again!');
+      resetGame();
     } else {
       alert('Tie game! That was close!');
+      resetGame();
     }
   }
 });
@@ -121,15 +134,18 @@ paperBtn.addEventListener('click', () => {
   message.textContent = results[2];
 
   rounds ++;
-  round.textContent = `Rounds: ${rounds}`;
+  round.textContent = `Round: ${rounds}`;
 
-  if (rounds == 5) {
+  if (rounds == 6) {
     if (playerScore > computerScore) {
       alert('Congrats! You won!');
+      resetGame();
     } else if (playerScore < computerScore) {
       alert('Oof! The computer won this time. Try again!');
+      resetGame();
     } else {
       alert('Tie game! That was close!');
+      resetGame();
     }
   }
 });
@@ -150,15 +166,18 @@ scissorsBtn.addEventListener('click', () => {
   message.textContent = results[2];
 
   rounds ++;
-  round.textContent = `Rounds: ${rounds}`;
+  round.textContent = `Round: ${rounds}`;
 
-  if (rounds == 5) {
+  if (rounds == 6) {
     if (playerScore > computerScore) {
       alert('Congrats! You won!');
+      resetGame();
     } else if (playerScore < computerScore) {
       alert('Oof! The computer won this time. Try again!');
+      resetGame();
     } else {
       alert('Tie game! That was close!');
+      resetGame();
     }
   }
 });
