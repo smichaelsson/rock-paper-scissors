@@ -13,7 +13,7 @@ function playRound(playerSelection, computerSelection) {
     case 'rock':
       switch(computerSelection) {
         case 'rock':
-          resultMessage = 'Tie! We both chose Rock';
+          resultMessage = 'Tie! You both chose Rock';
           break;
         case 'paper':
           computerWin = true;
@@ -32,7 +32,7 @@ function playRound(playerSelection, computerSelection) {
           resultMessage = 'You Win! Paper beats Rock';
           break;
         case 'paper':
-          resultMessage = 'Tie! We both chose Paper';
+          resultMessage = 'Tie! You both chose Paper';
           break;
         case 'scissors':
           computerWin = true;
@@ -51,7 +51,7 @@ function playRound(playerSelection, computerSelection) {
           resultMessage = 'You Win! Scissors beats Paper';
           break;
         case 'scissors':
-          resultMessage = 'Tie! We both chose Scissors';
+          resultMessage = 'Tie! You both chose Scissors';
           break;
       }
   }
@@ -77,7 +77,7 @@ const cScore = document.querySelector('.computerScore h1');
 const message = document.querySelector('.results');
 const round = document.querySelector('.rounds h1');
 
-alert("Ready to play Rock Paper Scissors? Choose a hand!");
+alert("Ready to play Rock Paper Scissors against an AI Superintelligence? Choose a hand!");
 
 let rounds = 1;
 let playerScore = 0;
