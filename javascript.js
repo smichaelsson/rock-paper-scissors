@@ -62,6 +62,10 @@ function playRound(playerSelection, computerSelection) {
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
+const pScore = document.querySelector('.playerScore h1');
+const cScore = document.querySelector('.computerScore h1');
+const message = document.querySelector('.results');
+const round = document.querySelector('.rounds h1');
 
 alert("Ready to play Rock Paper Scissors? Choose a hand!");
 
@@ -77,15 +81,18 @@ rockBtn.addEventListener('click', () => {
   computerSelection = computerPlay();
   results = playRound(playerSelection, computerSelection);
 
-  if (results[0] == true) {
-    playerScore += 1;
-  } else if (results[1] == true) {
-    computerScore += 1;
+  if (results[0]) {
+    playerScore ++;
+    pScore.textContent = `Player Score: ${playerScore}`;
+  } else if (results[1]) {
+    computerScore ++;
+    cScore.textContent = `Computer Score: ${computerScore}`;
   }
 
-  alert(results[2]);
+  message.textContent = results[2];
 
-  rounds += 1;
+  rounds ++;
+  round.textContent = `Rounds: ${rounds}`;
 
   if (rounds == 5) {
     if (playerScore > computerScore) {
@@ -97,20 +104,24 @@ rockBtn.addEventListener('click', () => {
     }
   }
 });
+
 paperBtn.addEventListener('click', () => {
   playerSelection = 'paper';
   computerSelection = computerPlay();
   results = playRound(playerSelection, computerSelection);
 
-  if (results[0] == true) {
-    playerScore += 1;
-  } else if (results[1] == true) {
-    computerScore += 1;
+  if (results[0]) {
+    playerScore ++;
+    pScore.textContent = `Player Score: ${playerScore}`;
+  } else if (results[1]) {
+    computerScore ++;
+    cScore.textContent = `Computer Score: ${computerScore}`;
   }
 
-  alert(results[2]);
+  message.textContent = results[2];
 
-  rounds += 1;
+  rounds ++;
+  round.textContent = `Rounds: ${rounds}`;
 
   if (rounds == 5) {
     if (playerScore > computerScore) {
@@ -122,20 +133,24 @@ paperBtn.addEventListener('click', () => {
     }
   }
 });
+
 scissorsBtn.addEventListener('click', () => {
   playerSelection = 'scissors';
   computerSelection = computerPlay();
   results = playRound(playerSelection, computerSelection);
 
-  if (results[0] == true) {
-    playerScore += 1;
-  } else if (results[1] == true) {
-    computerScore += 1;
+  if (results[0]) {
+    playerScore ++;
+    pScore.textContent = `Player Score: ${playerScore}`;
+  } else if (results[1]) {
+    computerScore ++;
+    cScore.textContent = `Computer Score: ${computerScore}`;
   }
 
-  alert(results[2]);
+  message.textContent = results[2];
 
-  rounds += 1;
+  rounds ++;
+  round.textContent = `Rounds: ${rounds}`;
 
   if (rounds == 5) {
     if (playerScore > computerScore) {
