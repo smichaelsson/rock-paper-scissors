@@ -77,7 +77,7 @@ const cScore = document.querySelector('.computerScore h1');
 const message = document.querySelector('.results');
 const round = document.querySelector('.rounds h1');
 
-alert("Ready to play Rock Paper Scissors against an AI Superintelligence? Choose a hand!");
+alert("Ready to play Rock Paper Scissors against an Superintelligent AI? Choose a hand!");
 
 let rounds = 1;
 let playerScore = 0;
